@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+background: #98bd9a;
+margin: 0 auto;
+}
+
+.game-board{
+    background: linear-gradient(180deg, #7fbdd9, #dce8e9);
+    width: 80%;
+    height: 500px;
+    border: 6px solid pink;
+    border-radius: 5%;
+    margin: 0% auto; /*centralize div*/
+    position: relative; /*every one limited to this space*/
+    overflow: hidden; /*everything that pass from this limit disapears*/
+    top: 100px;
+    
+}
+
+.grass{
+    position: absolute;
+    background: linear-gradient(180deg, #6ecf73,#678867);
+    bottom: 0;
+    width: 100%;
+    height: 15px;
+    border-top: 3px dashed #5abe5f;
+}
+
+.clouds{
+    position: absolute;
+    width: 550px;
+    opacity: 80%;
+    top: 50px;
+
+    animation: clouds-animation 20s infinite linear;
+}
+
+@keyframes clouds-animation{
+    from{
+        right: -550px;
+    }
+    to{
+        right: 550px;
+    }
+}
+
+.pipe{
+   position: absolute; /*no interference from any other imgs*/
+   bottom: 0;
+   width: 60px;
+   height: 45px;
+   
+
+   animation: pipe-animation 1.3s infinite linear; /*linear is for the animation curve*/
+}
+
+@keyframes pipe-animation{
+    from{
+        right: -80px; /*animation starts outside of the screen*/
+    }
+    to{
+        right: 100%;
+    }
+}
+
+.mario{
+    width: 150px;
+    position: absolute;
+    bottom: 10px;
+}
+.jump{
+    animation: jump 500ms ease-out;
+}
+
+@keyframes jump{
+   0%{
+    bottom: 0;
+   }
+   40%{
+    bottom: 180px;
+   }
+   50%{
+    bottom: 180px;
+   }
+   60%{
+    bottom: 180px;
+   }
+   100%{
+    bottom: 0;
+   }
+}
+
+footer{
+position: absolute;
+bottom:80px;
+width: 100%;
+
+}
+
+h3{
+    color: #678867;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+}
